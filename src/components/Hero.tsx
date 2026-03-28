@@ -5,8 +5,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-start overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/shop1.webp"
-        alt="Manhattan Auto Repair shop"
+        src="/Gemini_Generated_Image_np0cw4np0cw4np0c.png"
+        alt="Manhattan Auto Repair Inc. — 552 W 48th Street, New York"
         fill
         priority
         className="object-cover object-center"
