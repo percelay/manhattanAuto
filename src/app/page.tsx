@@ -132,7 +132,7 @@ export default function Home() {
         {/* Reviews */}
         <section className="py-12 border-b border-border">
           <h2 className="text-lg font-semibold text-text mb-6">
-            What people say
+            Online reviews
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             {featuredReviews.map((r) => (

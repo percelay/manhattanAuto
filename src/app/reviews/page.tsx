@@ -121,8 +121,23 @@ export default function ReviewsPage() {
           </a>
         </div>
 
-        {/* Team photos — uncropped */}
-        <div className="grid grid-cols-2 gap-2 md:gap-3 mb-12">
+        {/* Reviews — CSS masonry */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
+          {reviews.map((r) => (
+            <div
+              key={r.author + r.quote.slice(0, 15)}
+              className="break-inside-avoid mb-6 border-t border-border pt-4"
+            >
+              <p className="text-sm text-muted leading-relaxed mb-3">
+                &ldquo;{r.quote}&rdquo;
+              </p>
+              <p className="text-xs text-subtle font-medium">— {r.author}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Team photos — bottom, uncropped */}
+        <div className="grid grid-cols-2 gap-2 md:gap-3 mt-12">
           <Image
             src="/shopguy1.jpg"
             alt="Mechanic at work"
@@ -139,21 +154,6 @@ export default function ReviewsPage() {
             className="w-full h-auto block"
             sizes="(max-width: 768px) 50vw, 40vw"
           />
-        </div>
-
-        {/* Reviews — CSS masonry */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
-          {reviews.map((r) => (
-            <div
-              key={r.author + r.quote.slice(0, 15)}
-              className="break-inside-avoid mb-6 border-t border-border pt-4"
-            >
-              <p className="text-sm text-muted leading-relaxed mb-3">
-                &ldquo;{r.quote}&rdquo;
-              </p>
-              <p className="text-xs text-subtle font-medium">— {r.author}</p>
-            </div>
-          ))}
         </div>
       </section>
     </div>

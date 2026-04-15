@@ -43,18 +43,6 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Photo header */}
-      <div className="w-full h-[40vh] relative overflow-hidden">
-        <Image
-          src="/DSC02875.JPG"
-          alt="Vehicle on lift at Manhattan Auto Repair"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </div>
-
       <div className="max-w-5xl mx-auto px-5">
         <section className="py-12 md:py-16">
           <h1 className="text-2xl font-semibold text-text mb-10">Services</h1>
