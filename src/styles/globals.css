@@ -1,37 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Background Layers ───────────────────────────────── */
-  --color-bg: #0b0f16;
-  --color-surface: #131926;
-  --color-card: #1c2436;
-  --color-card-hover: #242f47;
+  /* Backgrounds */
+  --color-bg: #f6f3ef;
+  --color-surface: #edeae5;
+  --color-card: #ffffff;
 
-  /* ── Brand Accent — Warm Amber ───────────────────────── */
-  --color-amber: #f59e0b;
-  --color-amber-hover: #d97706;
-  --color-amber-light: #fcd34d;
-  --color-amber-dim: #78430a;
+  /* Borders */
+  --color-border: #d0cbc3;
 
-  /* ── Text Hierarchy ──────────────────────────────────── */
-  --color-fg: #eef2f8;
-  --color-fg-muted: #8b9ab2;
-  --color-fg-subtle: #4d5e73;
+  /* Text */
+  --color-text: #1a1714;
+  --color-muted: #6b6560;
+  --color-subtle: #9e9890;
 
-  /* ── Borders ─────────────────────────────────────────── */
-  --color-border: #243048;
-  --color-border-bright: #374e72;
+  /* Accent */
+  --color-red: #b91c1c;
+  --color-red-hover: #991b1b;
 
-  /* ── Util ─────────────────────────────────────────────── */
+  /* Util */
   --color-white: #ffffff;
   --color-black: #000000;
 
-  /* ── Typography ───────────────────────────────────────── */
+  /* Font */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ── Base Reset & Global Styles ──────────────────────────── */
 *,
 *::before,
 *::after {
@@ -44,52 +38,7 @@ html {
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-fg);
+  color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-/* ── Scrollbar Styling ───────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-border-bright);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-amber);
-}
-
-/* ── Utility: Amber gradient text ────────────────────────── */
-.text-gradient-amber {
-  background: linear-gradient(135deg, var(--color-amber) 0%, var(--color-amber-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── Utility: Amber glow box-shadow ──────────────────────── */
-.shadow-amber-glow {
-  box-shadow: 0 0 40px rgba(245, 158, 11, 0.18), 0 4px 24px rgba(0, 0, 0, 0.5);
-}
-
-.shadow-card {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* ── Utility: Section divider line ───────────────────────── */
-.divider-amber {
-  width: 3rem;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-amber), transparent);
-  border-radius: 2px;
 }

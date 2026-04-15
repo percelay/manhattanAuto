@@ -1,105 +1,82 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, Wrench } from "lucide-react";
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-bg/95 backdrop-blur-md border-b border-border shadow-card"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#"
-          className="flex items-center gap-2.5 group"
-          onClick={() => setMenuOpen(false)}
+    <header className="bg-bg border-b border-border sticky top-0 z-50">
+      <div className="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between gap-6">
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="font-semibold text-sm text-text shrink-0"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber transition-colors duration-200 group-hover:bg-amber-hover">
-            <Wrench size={16} className="text-black" strokeWidth={2.5} />
-          </span>
-          <span className="font-display font-bold text-base md:text-lg leading-none">
-            <span className="text-fg">Manhattan</span>
-            <span className="text-amber"> Auto</span>
-          </span>
-        </a>
+          Manhattan Auto Repair
+        </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-fg-muted hover:text-fg transition-colors duration-200 tracking-wide"
+        <nav className="hidden md:flex items-center gap-7">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-sm text-muted hover:text-text transition-colors duration-150"
             >
-              {link.label}
-            </a>
+              {l.label}
+            </Link>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <a
           href="tel:2127574366"
-          className="hidden md:inline-flex items-center gap-2 bg-amber hover:bg-amber-hover text-black font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
+          className="hidden md:block text-sm font-medium text-text shrink-0 hover:text-red transition-colors duration-150"
         >
           (212) 757-4366
         </a>
 
-        {/* Mobile Menu Button */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-fg-muted hover:text-fg transition-colors duration-200 p-1"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-muted hover:text-text transition-colors duration-150"
+          aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        } bg-surface border-b border-border`}
+        className={`md:hidden border-t border-border bg-bg overflow-hidden transition-all duration-200 ${
+          open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <nav className="flex flex-col px-6 py-4 gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-fg-muted hover:text-fg hover:bg-card transition-colors duration-200 px-3 py-3 rounded-lg text-sm font-medium"
+        <div className="px-5 py-4 flex flex-col gap-4">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-sm text-text"
             >
-              {link.label}
-            </a>
+              {l.label}
+            </Link>
           ))}
           <a
             href="tel:2127574366"
-            onClick={() => setMenuOpen(false)}
-            className="mt-3 bg-amber hover:bg-amber-hover text-black font-semibold text-sm px-5 py-3 rounded-lg text-center transition-colors duration-200"
+            className="text-sm font-medium text-text border-t border-border pt-4"
           >
-            Call (212) 757-4366
+            (212) 757-4366
           </a>
-        </nav>
+        </div>
       </div>
     </header>
   );

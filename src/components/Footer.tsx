@@ -1,106 +1,62 @@
-import { Wrench, MapPin, Phone, Mail } from "lucide-react";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-];
-
 export default function Footer() {
   return (
-    <footer className="bg-bg border-t border-border">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
-        <div className="grid md:grid-cols-3 gap-10 md:gap-8">
-          {/* Brand */}
+    <footer className="border-t border-border mt-16">
+      <div className="max-w-5xl mx-auto px-5 py-10">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
           <div>
-            <a href="#" className="inline-flex items-center gap-2.5 mb-4">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-amber">
-                <Wrench size={16} className="text-black" strokeWidth={2.5} />
-              </span>
-              <span className="font-display font-bold text-base leading-none">
-                <span className="text-fg">Manhattan</span>
-                <span className="text-amber"> Auto</span>
-              </span>
-            </a>
-            <p className="text-fg-muted text-sm leading-relaxed max-w-xs">
-              The mechanics at our shop have over 60 years of experience between
-              them. Dedicated to providing high-quality repairs to keep you safe
-              and happy.
+            <p className="font-semibold text-sm text-text mb-1">
+              Manhattan Auto Repair Inc.
+            </p>
+            <p className="text-sm text-muted">552 W 48th Street</p>
+            <p className="text-sm text-muted">New York, NY 10036</p>
+          </div>
+
+          <div>
+            <p className="text-sm text-muted mb-1">
+              <a
+                href="tel:2127574366"
+                className="hover:text-text transition-colors duration-150"
+              >
+                (212) 757-4366
+              </a>
+            </p>
+            <p className="text-sm text-muted">
+              <a
+                href="mailto:Manhattanauto11@gmail.com"
+                className="hover:text-text transition-colors duration-150"
+              >
+                Manhattanauto11@gmail.com
+              </a>
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
-            <p className="text-fg font-bold text-sm mb-4 uppercase tracking-wider">
-              Quick Links
-            </p>
-            <ul className="flex flex-col gap-2.5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-fg-muted hover:text-amber transition-colors duration-200 text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <p className="text-sm text-muted">Mon–Fri: 8:00 am – 5:00 pm</p>
+            <p className="text-sm text-muted">Sat: 8:00 am – 1:00 pm</p>
+            <p className="text-sm text-muted">Sun: Closed</p>
           </div>
 
-          {/* Contact info */}
-          <div>
-            <p className="text-fg font-bold text-sm mb-4 uppercase tracking-wider">
-              Contact
-            </p>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a
-                  href="https://maps.google.com/?q=552+W+48th+Street+New+York+NY+10036"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2.5 text-fg-muted hover:text-fg transition-colors duration-200 text-sm"
-                >
-                  <MapPin size={14} className="text-amber shrink-0 mt-0.5" />
-                  552 W 48th Street, New York, NY 10036
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:2127574366"
-                  className="flex items-center gap-2.5 text-fg-muted hover:text-fg transition-colors duration-200 text-sm"
-                >
-                  <Phone size={14} className="text-amber shrink-0" />
-                  (212) 757-4366
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:Manhattanauto11@gmail.com"
-                  className="flex items-center gap-2.5 text-fg-muted hover:text-fg transition-colors duration-200 text-sm break-all"
-                >
-                  <Mail size={14} className="text-amber shrink-0" />
-                  Manhattanauto11@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
+          <nav className="flex flex-col gap-2">
+            {[
+              ["Home", "/"],
+              ["Services", "/services"],
+              ["Reviews", "/reviews"],
+              ["Contact", "/contact"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-muted hover:text-text transition-colors duration-150"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-fg-subtle text-xs">
-            &copy; {new Date().getFullYear()} Manhattan Auto Repair Inc. All rights
-            reserved.
-          </p>
-          <p className="text-fg-subtle text-xs">
-            Mon–Fri: 8am–5pm &nbsp;·&nbsp; Sat: 8am–1pm &nbsp;·&nbsp; Sun: Closed
-          </p>
-        </div>
+        <p className="text-xs text-subtle mt-10">
+          &copy; {new Date().getFullYear()} Manhattan Auto Repair Inc.
+        </p>
       </div>
     </footer>
   );
