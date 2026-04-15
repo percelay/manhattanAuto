@@ -25,7 +25,7 @@ export default function Home() {
       {/* Hero — cropped slightly top/bottom, nav buttons top, text bottom */}
       <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <Image
-          src="/DSC02879.JPG"
+          src="/C89CF81B-17CF-430E-9860-AE334AD92BEE_1_201_a.jpeg"
           alt="Manhattan Auto Repair Inc. — 552 W 48th Street, New York"
           fill
           priority
@@ -43,7 +43,7 @@ export default function Home() {
             <a
               key={href}
               href={href}
-              className="text-white text-xs md:text-sm font-semibold border border-white px-4 py-2 hover:bg-white hover:text-text transition-colors duration-150"
+              className="bg-white text-red text-xs md:text-sm font-semibold border-2 border-red px-4 py-2 hover:bg-red hover:text-white transition-colors duration-150"
             >
               {label}
             </a>

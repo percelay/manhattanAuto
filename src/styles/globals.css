@@ -24,6 +24,7 @@
 
   /* Font */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-oswald: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
 }
 
 *,
