@@ -34,7 +34,7 @@ export default function Home() {
         />
 
         {/* Nav buttons — top */}
-        <div className="absolute top-[8%] left-0 right-0 flex justify-center gap-3 md:gap-4 px-4">
+        <div className="absolute top-[8%] left-0 right-0 hidden md:flex justify-center gap-4 px-4">
           {[
             ["Services", "/services"],
             ["Reviews", "/reviews"],
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* Text — bottom center */}
-        <div className="absolute bottom-6 md:bottom-10 left-0 right-0 flex justify-center px-6">
+        <div className="absolute bottom-10 left-0 right-0 hidden md:flex justify-center px-6">
           <div className="text-center max-w-2xl">
             <p className="text-white font-bold text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,1)] mb-3">
               The mechanics at our shop have over 60 years of experience between
