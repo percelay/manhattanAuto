@@ -93,26 +93,24 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Photos */}
+            {/* Photos — uncropped */}
             <div className="flex flex-col gap-3">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/DSC02882.JPG"
-                  alt="Registered Motor Vehicle Repair Shop — Official NYS Emissions Inspection Station"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/DSC02879.JPG"
-                  alt="Manhattan Auto Repair Inc. exterior"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              <Image
+                src="/DSC02874.JPG"
+                alt="Shop floor"
+                width={5152}
+                height={3864}
+                className="w-full h-auto block"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <Image
+                src="/DSC02882.JPG"
+                alt="Registered Motor Vehicle Repair Shop — Official NYS Emissions Inspection Station"
+                width={5152}
+                height={3864}
+                className="w-full h-auto block"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </section>

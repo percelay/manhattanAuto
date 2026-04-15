@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -118,6 +119,26 @@ export default function ReviewsPage() {
             Read on Yelp
             <ExternalLink size={13} />
           </a>
+        </div>
+
+        {/* Team photos — uncropped */}
+        <div className="grid grid-cols-2 gap-2 md:gap-3 mb-12">
+          <Image
+            src="/shopguy1.jpg"
+            alt="Mechanic at work"
+            width={1000}
+            height={750}
+            className="w-full h-auto block"
+            sizes="(max-width: 768px) 50vw, 40vw"
+          />
+          <Image
+            src="/shopguy2.jpg"
+            alt="Mechanic at work"
+            width={1000}
+            height={750}
+            className="w-full h-auto block"
+            sizes="(max-width: 768px) 50vw, 40vw"
+          />
         </div>
 
         {/* Reviews — CSS masonry */}
