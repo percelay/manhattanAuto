@@ -34,7 +34,7 @@ export default function Home() {
         />
 
         {/* Nav buttons — top */}
-        <div className="absolute top-[15%] left-0 right-0 flex justify-center gap-3 md:gap-4 px-4">
+        <div className="absolute top-[8%] left-0 right-0 flex justify-center gap-3 md:gap-4 px-4">
           {[
             ["Services", "/services"],
             ["Reviews", "/reviews"],
