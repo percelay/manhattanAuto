@@ -22,30 +22,47 @@ const featuredReviews = [
 export default function Home() {
   return (
     <>
-      {/* Hero photo — full image in frame with left-side text overlay */}
-      <div className="relative w-full">
+      {/* Hero — cropped slightly top/bottom, nav buttons top, text bottom */}
+      <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
         <Image
           src="/DSC02879.JPG"
           alt="Manhattan Auto Repair Inc. — 552 W 48th Street, New York"
-          width={5152}
-          height={3864}
+          fill
           priority
-          className="w-full h-auto block"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Text overlay — left side */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full md:w-[45%] px-6 md:px-12">
-            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mb-4">
+
+        {/* Nav buttons — top */}
+        <div className="absolute top-5 md:top-8 left-0 right-0 flex justify-center gap-3 md:gap-4 px-4">
+          {[
+            ["Services", "/services"],
+            ["Reviews", "/reviews"],
+            ["Contact", "/contact"],
+          ].map(([label, href]) => (
+            <a
+              key={href}
+              href={href}
+              className="text-white text-xs md:text-sm font-semibold border border-white px-4 py-2 hover:bg-white hover:text-text transition-colors duration-150"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+
+        {/* Text — bottom center */}
+        <div className="absolute bottom-6 md:bottom-10 left-0 right-0 flex justify-center px-6">
+          <div className="text-center max-w-2xl">
+            <p className="text-white font-bold text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,1)] mb-3">
               The mechanics at our shop have over 60 years of experience between
               them. They are dedicated to providing high-quality repairs to keep
               you safe and happy.
             </p>
-            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mb-4">
+            <p className="text-white font-bold text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,1)] mb-3">
               We provide 12-month warranties with all of our services for your
               peace of mind.
             </p>
-            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <p className="text-white font-bold text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,1)]">
               Our shop only uses parts from reputable brands to ensure that your
               vehicle is always ready to drive.
             </p>
@@ -54,40 +71,6 @@ export default function Home() {
       </div>
 
       <div className="max-w-5xl mx-auto px-5">
-        {/* Shop intro */}
-        <section className="py-12 md:py-16 border-b border-border">
-          <div className="max-w-2xl">
-            <h1 className="text-2xl font-semibold text-text mb-1">
-              Manhattan Auto Repair Inc.
-            </h1>
-            <p className="text-sm text-muted mb-6">
-              552 W 48th Street, New York, NY 10036 &middot;{" "}
-              <a
-                href="tel:2127574366"
-                className="hover:text-text transition-colors duration-150"
-              >
-                (212) 757-4366
-              </a>
-            </p>
-            <p className="text-base text-muted leading-relaxed mb-4">
-              The mechanics at our shop have over 60 years of experience between
-              them. They are dedicated to providing high-quality repairs to keep
-              you safe and happy.
-            </p>
-            <p className="text-base text-muted leading-relaxed mb-4">
-              Whether you&apos;re coming in for a routine inspection or a repair
-              service, we promise that you will be completely satisfied with our
-              work. We provide 12-month warranties with all of our services for
-              your peace of mind.
-            </p>
-            <p className="text-base text-muted leading-relaxed">
-              We&apos;re committed to providing a stress-free experience to both
-              new and returning customers. Our shop only uses parts from
-              reputable brands to ensure that your vehicle is always ready to
-              drive.
-            </p>
-          </div>
-        </section>
 
         {/* Shop photos */}
         <section className="py-12 border-b border-border">
