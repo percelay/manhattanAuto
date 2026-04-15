@@ -20,7 +20,7 @@ export default function Header() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="text-red text-lg tracking-wide shrink-0"
+          className="text-red text-2xl tracking-widest shrink-0"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Manhattan Auto Repair

@@ -78,26 +78,16 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Shop photos */}
-        <section className="pb-16 grid grid-cols-2 gap-2 md:gap-3">
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src="/DSC02874.JPG"
-              alt="Shop floor"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 50vw, 40vw"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src="/shopguy2.jpg"
-              alt="Mechanic at work"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 50vw, 40vw"
-            />
-          </div>
+        {/* Shop interior — full image, no crop */}
+        <section className="pb-16">
+          <Image
+            src="/DSC02876.JPG"
+            alt="Official NYS Motor Vehicle Inspection Station — Manhattan Auto Repair"
+            width={5152}
+            height={3864}
+            className="w-full h-auto block"
+            sizes="100vw"
+          />
         </section>
 
         {/* 12-month warranty note */}
