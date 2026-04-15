@@ -22,16 +22,35 @@ const featuredReviews = [
 export default function Home() {
   return (
     <>
-      {/* Hero photo */}
-      <div className="w-full h-[55vh] md:h-[65vh] relative overflow-hidden">
+      {/* Hero photo — full image in frame with left-side text overlay */}
+      <div className="relative w-full">
         <Image
           src="/DSC02879.JPG"
           alt="Manhattan Auto Repair Inc. — 552 W 48th Street, New York"
-          fill
+          width={5152}
+          height={3864}
           priority
-          className="object-cover object-center"
+          className="w-full h-auto block"
           sizes="100vw"
         />
+        {/* Text overlay — left side */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full md:w-[45%] px-6 md:px-12">
+            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mb-4">
+              The mechanics at our shop have over 60 years of experience between
+              them. They are dedicated to providing high-quality repairs to keep
+              you safe and happy.
+            </p>
+            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mb-4">
+              We provide 12-month warranties with all of our services for your
+              peace of mind.
+            </p>
+            <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+              Our shop only uses parts from reputable brands to ensure that your
+              vehicle is always ready to drive.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-5">
